@@ -1,0 +1,373 @@
+/* =========================================
+   TASKFLOW - TASK CARD
+   Vibrant / Pinterest-inspired
+========================================= */
+
+
+/* =========================================
+   TASK CARD
+========================================= */
+
+.task-card {
+  position: relative;
+
+  padding: 16px;
+
+  border: 1px solid rgba(231, 226, 232, 0.9);
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-surface);
+
+  box-shadow:
+    0 3px 10px rgba(55, 42, 65, 0.06);
+
+  cursor: grab;
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.task-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #ddd5e1;
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   CARD ACTIVE
+========================================= */
+
+.task-card:active {
+  cursor: grabbing;
+
+  transform: scale(0.99);
+}
+
+
+/* =========================================
+   DRAGGING
+========================================= */
+
+.task-dragging {
+  opacity: 0.45;
+
+  transform: scale(0.98);
+
+  box-shadow:
+    0 10px 24px rgba(55, 42, 65, 0.12);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.task-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================
+   PRIORITY BADGE
+========================================= */
+
+.priority {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 25px;
+
+  padding: 4px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   HIGH
+========================================= */
+
+.priority-high {
+  background: var(--priority-high-bg);
+
+  color: var(--priority-high-text);
+}
+
+
+/* =========================================
+   MEDIUM
+========================================= */
+
+.priority-medium {
+  background: var(--priority-medium-bg);
+
+  color: var(--priority-medium-text);
+}
+
+
+/* =========================================
+   LOW
+========================================= */
+
+.priority-low {
+  background: var(--priority-low-bg);
+
+  color: var(--priority-low-text);
+}
+
+
+/* =========================================
+   TASK MENU
+========================================= */
+
+.task-menu {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+
+.task-menu:hover {
+  background: #f5f1f6;
+
+  color: var(--color-text);
+}
+
+
+/* =========================================
+   TASK TITLE
+========================================= */
+
+.task-card h3 {
+  color: var(--color-text);
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.task-description {
+  margin-top: 8px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  display: -webkit-box;
+
+  /* -webkit-line-clamp: 3; */
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   TASK FOOTER
+========================================= */
+
+.task-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 15px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid var(--color-border-light);
+
+  color: var(--color-text-muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   TASK ID
+========================================= */
+
+.task-footer span:first-child {
+  color: var(--color-primary);
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   POSITION
+========================================= */
+
+.task-footer span:last-child {
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   TASK ACTIONS
+========================================= */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.task-action {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  font-size: 15px;
+  line-height: 1;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+
+/* =========================================
+   EDIT
+========================================= */
+
+.edit-action {
+  color: #6f5aa8;
+}
+
+.edit-action:hover {
+  background: #f0ebff;
+  color: #57418e;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   DELETE
+========================================= */
+
+.delete-action {
+  color: #c87575;
+}
+
+.delete-action:hover {
+  background: #fff0f0;
+  color: #b34f4f;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
+.task-action:active {
+  transform: scale(0.94);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .task-card {
+    padding: 15px;
+  }
+
+
+  .task-card h3 {
+    font-size: 16px;
+  }
+
+
+  .task-description {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,57 @@
+/* =========================================
+   TASKFLOW - BOARD
+   Vibrant Kanban Layout
+========================================= */
+
+
+/* =========================================
+   BOARD
+========================================= */
+
+.board {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: 100%;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .board {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+
+    scrollbar-width: thin;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .board {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    overflow-x: visible;
+
+    padding-bottom: 0;
+  }
+}
