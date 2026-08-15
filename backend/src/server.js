@@ -8,10 +8,6 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
 app.use(cors());
 app.use(express.json());
 
@@ -24,8 +20,6 @@ app.get("/", (req, res) => {
 app.use("/api/board", boardRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.listen(PORT, () => {
-    console.log(
-        `TaskFlow backend running on http://localhost:${PORT}`
-    );
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`TaskFlow backend running on port ${PORT}`);
 });
