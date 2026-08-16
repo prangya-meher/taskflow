@@ -1,7 +1,7 @@
 const Database = require("better-sqlite3"); //loads our SQLite library.
 const path = require("path");
 
-const dbPath = path.join(__dirname, "taskflow.db"); //Our database file will be inside the db folder.
+const dbPath = process.env.DB_PATH || path.join(__dirname, "taskflow.db"); //Our database file will be inside the db folder.
 
 const db = new Database(dbPath); //opens the database.
 
